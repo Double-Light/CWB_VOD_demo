@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="UTF-8">
+  <title>氣象局隨選視訊平台demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  <!-- <script type="https://mytube.ncku.edu.tw/js/bootstrap-treeview.js"></script> -->
+  
+  
+  <link rel="stylesheet" href="../style.css">
+  <style></style>
+  
+  
+</head>
+<body>
+<header id="page-header-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid" style="max-width: 1296px">
+      <a class="navbar-brand" href="#">氣象局隨選視訊平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="../index.html">首頁</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="../userinfo.html">個人資訊</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="../allvideos.html">所有影片</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="../description.html">網站說明</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="../admin.html">管理員專區</a>
+		  </li>
+		</ul>
+        <form class="navbar-form navbar-right" action="https://metet.cwb.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+          <div class="input-group">
+            <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+            <div class="input-group-btn">
+              <button class="btn btn-light" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+        <form action="https://metet.cwb.gov.tw/login/index.php" method="post">
+          <button type="submit" class="btn btn-danger" style="margin-left:20px;">登入</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container center">
+  <br/>
+  <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li><a href="#index.html" style="margin-right:12px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+          <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+        </svg>
+        </a></li>
+      <li class="breadcrumb-item"><a href="../allvideos.html">所有影片</a></li>
+      <li class="breadcrumb-item"><a href="#">預報中心</a></li>
+      <li class="breadcrumb-item active" aria-current="page">系列6_北極震盪</li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-md-12 p-5 box">
+      <h3>系列6_北極振盪</h3>
+      <div class="completioninfo row-fluid">
+        <div class="condition">
+          <font color="red">
+            <b>活動完成條件尚未達成</b>
+          </font>
+          <br>※ 活動完成條件:
+          <br>■ 觀看完成比例:標準完成率為80%.
+        </div>
+        <div class="completionbutton">
+          <div class="singlebutton">
+            <form method="post" action="https://metet.cwb.gov.tw/mod/videos/updatecompletion.php">
+              <div>
+                <input type="submit" value="更新活動完成度" class="completionsubmit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="video-container mt-4">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/p1UjgXRj7L8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-12 box"> 
+      <div class="m-2 px-5">
+        <div class="flex justify-between items-center mb-4">
+          <div class="fs-4 fw-bold mt-3" style="display:block;float:left">影片資訊</div>
+          <div style="margin:8px;">
+            <label class="demo-tags-wrapper" title="收藏" style="">
+              <input name="tags[]" type="checkbox"> 
+              <div class="checkmark checkmark-blue" style="width:32px;">
+                <i class="bi bi-bookmark-fill" style="margin-left:-3.5px;"></i>
+              </div>
+            </label>
+          </div>
+        </div>
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <td width="120">影片標題:</td>
+              <td>系列6_北極振盪</td>
+            </tr>
+            <tr>
+              <td>影片分類:</td>
+              <td>科普教育</td>
+            </tr>
+            <tr>
+              <td>標籤:</td>
+              <td>
+                <span class="badge rounded-pill bg-success fs-6 m-1">氣候</span>
+                <span class="badge rounded-pill bg-success fs-6 m-1">氣象科普</span>
+                <span class="badge rounded-pill bg-primary fs-6 m-1">北極振盪</span>
+                <span class="badge rounded-pill bg-primary fs-6 m-1">寒流</span>
+                <span class="badge rounded-pill bg-primary fs-6 m-1">低溫</span>
+                <span class="badge rounded-pill bg-primary fs-6 m-1">極鋒噴流</span>
+              </td>
+            </tr>
+            <tr>
+              <td>上傳時間:</td>
+              <td>2016年1月21日</td>
+            </tr>
+            <tr>
+              <td>上傳者:</td>
+              <td>
+                <a href="#">氣象局</a>
+              </td>
+            </tr>
+            <tr>
+              <td>觀看次數:</td>
+              <td>2,155,023</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <br/>
+    <hr/>
+    <footer class="py-3 my-4">
+      <div class="text-center text-muted">
+        本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用<br> 
+        Firefox,Safari,Chrome and IE9+ Recommended<br>
+        中央氣象局 版權所有 © CWB All Rights Reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="UTF-8">
+  <title>氣象局隨選視訊平台demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  <!-- <script type="https://mytube.ncku.edu.tw/js/bootstrap-treeview.js"></script> -->
+  
+  
+  <link rel="stylesheet" href="./style.css">
+  <style></style>
+  
+  
+</head>
+
+<body>
+
+<!-- partial:index.partial.html -->
+<header id="page-header-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid" style="max-width:1296px">
+      <a class="navbar-brand" href="#">氣象局隨選視訊平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="./index.html">首頁</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./userinfo.html">個人資訊</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./allvideos.html">所有影片</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./description.html">網站說明</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./admin.html">管理員專區</a>
+		  </li>
+		</ul>
+        <form class="navbar-form navbar-right" action="https://metet.cwb.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+          <div class="input-group">
+            <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+            <div class="input-group-btn">
+              <button class="btn btn-light" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+        <form action="https://metet.cwb.gov.tw/login/index.php" method="post">
+          <button type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container">
+  <div class="col-md-12">
+    <div class="row py-3">
+      <div class="col-md-3">
+        <div class="box" style="height:98%;">
+          <div class="fs-4 fw-bold">單位</div>
+          <div id="treeview" style="overflow:scroll;overflow-x:hidden;overflow-y:auto;max-height:60vh" class="treeview ">
+            <ul class="list-group">
+              <li class="list-group-item node-treeview" data-nodeid="0" style="color:undefined;background-color:undefined">
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-8000000" style="color:inherit">局長室</a>
+                <span class="badge">5</span>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="1" style="color:undefined;background-color:undefined">
+                <span class="icon expand-icon bi-dash-lg"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10000000" style="color:inherit">秘書室</a>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="2" style="color:undefined;background-color:undefined">
+                <span class="indent"></span>
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10030000" style="color:inherit">公關室</a>
+                <span class="badge">2</span>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="3" style="color:undefined;background-color:undefined">
+                <span class="icon expand-icon bi-dash-lg"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10000000" style="color:inherit">預報中心</a>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="4" style="color:undefined;background-color:undefined">
+                <span class="indent"></span>
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10030000" style="color:inherit">傳真課</a>
+                <span class="badge">1042</span>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="5" style="color:undefined;background-color:undefined">
+                <span class="indent"></span>
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10030000" style="color:inherit">報務課</a>
+                <span class="badge">42</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="box">
+          <div class="fs-4 fw-bold">篩選條件</div>
+          <form id="searchForm" name="searchForm" class="form-horizontal" method="GET" rols="form" abineguid="F9C047C6F0A14AE88358EFD27FA6E10D">
+            <div class="btn-group" style="margin:4px">
+              <a class="btn btn-light dropdown-toggle border" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#dropdown">單位</a>
+              <ul id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="">
+                <li>
+                  <a class="dropdown-item" href="#">局本部</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">預報中心</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">地震中心</a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group" style="margin:4px">
+              <button type="button" class="btn btn-light border" data-bs-toggle="modal" data-bs-target="#TagsModal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+                  <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"></path>
+                  <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"></path>
+                </svg>
+                標籤
+              </button>
+            </div>
+          </form>
+          <div class="modal in" id="TagsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content" style="border-radius:3px;background-color:#f5f5f5;color:#000">
+                <div class="modal-header" style="border-bottom:1px solid #e8e8e8;position:relative;height:65px">
+                  <button type="button" class="btn-close btn-close-black" aria-label="Close" data-bs-dismiss="modal" style="border-radius:50%;"></button>
+                  <h4 class="modal-title" style="text-align:center;font-weight:700;margin:0;padding:0;margin-top:5px;font-size:18px;width:100%">影片標籤篩選</h4>
+                </div>
+                <div class="modal-body" style="overflow-y:scroll;padding-top:0">
+                  <div style="background-color:#e8e8e8;margin:0 -15px 20px -15px;padding:5px 15px 0 15px">
+                    <h5 style="font-weight:700">廣泛配對
+                      <label class="form-switch" style="float:right">
+                        <input type="checkbox" class="form-check-input" role="switch" id="broad" style="cursor:pointer">
+                      </label>
+                    </h5>
+                    <p style="color:gray;padding-bottom:12px;font-size:12px;padding-right:60px">較多結果，較不精準。配對所有包含任何一個選擇的標籤的影片，而非全部標籤。</p>
+                  </div>
+                  <h5 style="margin-bottom:15px;font-weight:700">專業領域：</h5>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="氣象觀測">
+                    <span class="checkmark checkmark-green">氣象觀測</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="氣象預報">
+                    <span class="checkmark checkmark-green">氣象預報</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="氣候">
+                    <span class="checkmark checkmark-green">氣候</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="海象">
+                    <span class="checkmark checkmark-green">海象</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="天文">
+                    <span class="checkmark checkmark-green">天文</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="地震">
+                    <span class="checkmark checkmark-green">地震</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="衛星">
+                    <span class="checkmark checkmark-green">衛星</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="雷達">
+                    <span class="checkmark checkmark-green">雷達</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="儀器檢校">
+                    <span class="checkmark checkmark-green">儀器檢校</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="數值天氣預報">
+                    <span class="checkmark checkmark-green">數值天氣預報</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="資訊系統">
+                    <span class="checkmark checkmark-green">資訊系統</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="災害防救">
+                    <span class="checkmark checkmark-green">災害防救</span>
+                  </label>
+                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">行政領域：</h5>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="行政業務">
+                    <span class="checkmark checkmark-green">行政業務</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="法規與法制">
+                    <span class="checkmark checkmark-green">法規與法制</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="文書與檔管">
+                    <span class="checkmark checkmark-green">文書與檔管</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="主計採購">
+                    <span class="checkmark checkmark-green">主計採購</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="人事管理">
+                    <span class="checkmark checkmark-green">人事管理</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="資訊安全">
+                    <span class="checkmark checkmark-green">資訊安全</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="永續發展">
+                    <span class="checkmark checkmark-green">永續發展</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="管理訓練">
+                    <span class="checkmark checkmark-green">管理訓練</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="工具使用">
+                    <span class="checkmark checkmark-green">工具使用</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="局務會報">
+                    <span class="checkmark checkmark-green">局務會報</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="業務報告">
+                    <span class="checkmark checkmark-green">業務報告</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="政令宣導">
+                    <span class="checkmark checkmark-green">政令宣導</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="廉政宣導">
+                    <span class="checkmark checkmark-green">廉政宣導</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="性別平等">
+                    <span class="checkmark checkmark-green">性別平等</span>
+                  </label>
+                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">通識領域：</h5>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="美學設計">
+                    <span class="checkmark checkmark-green">美學設計</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="社群媒體">
+                    <span class="checkmark checkmark-green">社群媒體</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="口語表達">
+                    <span class="checkmark checkmark-green">口語表達</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="電腦軟體">
+                    <span class="checkmark checkmark-green">電腦軟體</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="程式語言">
+                    <span class="checkmark checkmark-green">程式語言</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="科技新知">
+                    <span class="checkmark checkmark-green">科技新知</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="生活保健">
+                    <span class="checkmark checkmark-green">生活保健</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="影片欣賞">
+                    <span class="checkmark checkmark-green">影片欣賞</span>
+                  </label>
+                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">演講性質：</h5>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="新人訓練">
+                    <span class="checkmark checkmark-green">新人訓練</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="職務訓練">
+                    <span class="checkmark checkmark-green">職務訓練</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="作業SOP">
+                    <span class="checkmark checkmark-green">作業SOP</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="系統使用">
+                    <span class="checkmark checkmark-green">系統使用</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="系統管理">
+                    <span class="checkmark checkmark-green">系統管理</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="學術技術">
+                    <span class="checkmark checkmark-green">學術技術</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="校驗分析">
+                    <span class="checkmark checkmark-green">校驗分析</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="分析回顧">
+                    <span class="checkmark checkmark-green">分析回顧</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="經驗分享">
+                    <span class="checkmark checkmark-green">經驗分享</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="應用與服務">
+                    <span class="checkmark checkmark-green">應用與服務</span>
+                  </label>
+                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">關鍵字：</h5>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="春雨">
+                    <span class="checkmark checkmark-blue">春雨</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="梅雨">
+                    <span class="checkmark checkmark-blue">梅雨</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="熱帶氣旋">
+                    <span class="checkmark checkmark-blue">熱帶氣旋</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="西南風">
+                    <span class="checkmark checkmark-blue">西南風</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="鋒面">
+                    <span class="checkmark checkmark-blue">鋒面</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="冰雹">
+                    <span class="checkmark checkmark-blue">冰雹</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="颮線">
+                    <span class="checkmark checkmark-blue">颮線</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="對流胞">
+                    <span class="checkmark checkmark-blue">對流胞</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="中尺度對流">
+                    <span class="checkmark checkmark-blue">中尺度對流</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="地震">
+                    <span class="checkmark checkmark-blue">地震</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="海嘯">
+                    <span class="checkmark checkmark-blue">海嘯</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="火山">
+                    <span class="checkmark checkmark-blue">火山</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="波浪">
+                    <span class="checkmark checkmark-blue">波浪</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="潮汐">
+                    <span class="checkmark checkmark-blue">潮汐</span>
+                  </label>
+                  <label class="demo-tags-wrapper">
+                    <input name="tags[]" type="checkbox" value="暴潮">
+                    <span class="checkmark checkmark-blue">暴潮</span>
+                  </label>
+                </div>
+                <hr style="border-color:#3a3c3f;margin:0">
+                <div class="modal-footer" style="border-top:none;width:100%;text-align:center;padding:0">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="display:inline-block;float:left;border:none;color:#fff;width:48%;font-weight:700;line-height:34px;cursor:pointer">取消</button>
+                  <button type="button" class="btn btn-primary" style="border:none;color:#fff;width:48%;font-weight:700;line-height:34px;cursor:pointer">確定</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="content_box" class="box" style="display:block">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <div class="fs-4 fw-bold mt-3" style="display:block;float:left">篩選結果</div>
+              <div class="" style="margin:4px;">
+                <a class="btn btn-light dropdown-toggle border" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#dropdown">排序方式</a>
+                <ul id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="">
+                  <li>
+                    <a class="dropdown-item" href="#">最新</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">熱門</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">最多收藏</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row" style="padding-left:10px;padding-right:10px">
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="2020颱風預報技術得分權重調整">
+                    <img alt="2020颱風預報技術得分權重調整" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:09:50</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>2020颱風預報技術得分權重調整</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 8</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="國道新建自動氣象站資料應用">
+                    <img alt="國道新建自動氣象站資料應用" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:34:21</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>國道新建自動氣象站資料應用</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 4</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="熱指數觀測與預報服務">
+                    <img alt="熱指數觀測與預報服務" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:27:19</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>熱指數觀測與預報服務</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="霧氣候特性及預報作業介紹">
+                    <img alt="霧氣候特性及預報作業介紹" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:34:11</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>霧氣候特性及預報作業介紹</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 1</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="大規模豪雨教育訓練">
+                    <img alt="大規模豪雨教育訓練" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:39:17</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>大規模豪雨教育訓練</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="IGame網站介紹_網頁說明前半段">
+                    <img alt="IGame網站介紹_網頁說明前半段" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:10:14</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>IGame網站介紹_網頁說明前半段</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 10</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="IGame網站介紹_TPP介紹">
+                    <img alt="IGame網站介紹_TPP介紹" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:09:55</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>IGame網站介紹_TPP介紹</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="IGame網站介紹_TPP提問">
+                    <img alt="IGame網站介紹_TPP提問" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:30:53</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>IGame網站介紹_TPP提問</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="IGame網站介紹_網頁說明後半段">
+                    <img alt="IGame網站介紹_網頁說明後半段" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:09:19</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>IGame網站介紹_網頁說明後半段</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 3</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="圖卡素材平台使用教育訓練">
+                    <img alt="圖卡素材平台使用教育訓練" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:29:10</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>圖卡素材平台使用教育訓練</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="山區暴雨防災告警作業">
+                    <img alt="山區暴雨防災告警作業" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">00:35:48</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>山區暴雨防災告警作業</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-6 p-3">
+                <div class="thumbnail thumbnail_video">
+                  <a href="./video/video_id_0.html" title="大雷雨實務訓練">
+                    <img alt="大雷雨實務訓練" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" style="max-width:100%">
+                    <span class="video-time video-time_vertical">01:37:35</span>
+                  </a>
+                  <div class="caption caption_video">
+                    <span>
+                      <b>大雷雨實務訓練</b>
+                    </span>
+                    <span class="bi bi-eye-fill" style="float:right;font-size:12px"> 0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <footer class="py-3 my-4">
+    <div class="text-center text-muted">
+      本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+      <br>Firefox,Safari,Chrome and IE9+ Recommended
+      <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+    </div>
+  </footer>
+</div>
+
+<!-- partial -->
+  
+</body>
+</html>
