@@ -46,6 +46,18 @@ ul, li {
 	display: flex;
 }
 
+/* #### 分頁按鈕 #### */
+.page-item{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.page-link{
+  border-radius: 0.375rem;
+}
+
 /* #### 個人資訊左側樣式 ####*/
 
 .card-media {
@@ -224,6 +236,15 @@ ul, li {
 
 .checkmark-blue {
   border: 1px solid #7ec5f1;
+}
+
+/* 圓形標記 */
+.checkmark-circle {
+  border: none;
+  height: 32px;
+  width: 32px;
+  padding: 2px 2px;
+  border-radius: 50%;
 }
 
 .demo-tags-wrapper input:checked~.checkmark-blue {
