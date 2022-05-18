@@ -58,6 +58,11 @@ ul, li {
   border-radius: 0.375rem;
 }
 
+.card-header{
+  margin: 0.25rem 1rem;
+  background-color:#fff;
+}
+
 /* #### 個人資訊左側樣式 ####*/
 
 .card-media {
