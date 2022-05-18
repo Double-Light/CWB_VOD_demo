@@ -46,6 +46,11 @@ ul, li {
 	display: flex;
 }
 
+.card-header{
+  margin: 0.25rem 1rem;
+  background-color:#fff;
+}
+
 /* #### 分頁按鈕 #### */
 .page-item{
   margin-top: 0.5rem;
