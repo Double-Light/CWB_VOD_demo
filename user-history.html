@@ -3,15 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>氣象局隨選視訊平台demo</title>
+
+<!-- CSS 檔 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+<!-- 自訂義 CSS -->
+<link rel="stylesheet" href="./style.css">
+<style></style>
+
+<!-- JS 檔 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="./style.css">
 
-<style>
+<!-- circliful.css -->
+<link rel="stylesheet" href="./circliful.css">
 
-</style>
 
 </head>
 <body>
@@ -63,7 +71,7 @@
 <div class="container">
   <div class="col-md-12">
 	<div class="row py-3">
-      <div class="col-lg-3">
+      <div class="col-xl-3">
         <div class="card-media personal-card">
           <a href="#個人資訊" title="雲寶" target="_blank">
             <img src="https://ck101.tw/uc_server/images/noavatar_big.gif" width="80" height="80" title="雲寶" alt="" style="border-radius: 50%;">
@@ -108,7 +116,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-9">
+      <div class="col-xl-9">
         <div class="box">
           <div class="">
             <h2 class="">觀看紀錄</h2>
@@ -117,9 +125,9 @@
         </div>
         <div class="box">
           <div class="row my-3"><h6>今天</h6></div>
-          <div class="row mb-3">
-            <div class="col-lg-8">
-              <div class="card" style="border:none">
+          <div class="row my-3">
+            <div class="col-xl-8 col-12 p-2">
+              <div class="card p-1" style="border:none">
                 <div class="row g-0">
                   <div class="col-md-4" style="display:flex;align-items:center;justify-content:center;">
                     <a href="./video/video_id_0.html" title="2022美學1">
@@ -129,7 +137,9 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">2022美學1：社群數據分析與解讀</h5>
+                      <a href="./video/video_id_0.html" title="2022美學1" style="color: #333;text-decoration:none;">
+                        <h5 class="card-title">2022美學1：社群數據分析與解讀</h5>
+                      </a>
                       <p class="card-text">透過分析社群媒體後台數據，解讀網路使用者行為模式，找出增加觸及率、加強氣象資訊傳遞之行銷方式。</p>
                       <p class="card-text"><small class="text-muted">影片更新於 2022/04/11</small></p>
                     </div>
@@ -137,28 +147,32 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-6 py-3">
-              <div class="card" style="height:100%;background-color:#E3E3E3;border:none">
-                <div class="card-body p-2" style="display:flex;align-items:center;justify-content:center;">
-                  <div class="text-center">完成狀態<br/>70%</div>
+            <div class="col-xl-2 col-6 p-2" style="">
+              <div class="card p-1 text-center justify-content-center" style="height:100%;border:none">
+                <div class="card-header">完成度</div>
+                <div class="card-body text-center justify-content-center" style="flex-direction:column;display:flex;">
+                  <div id="progress1" data-dimension="80" data-text="3%" data-fontsize="16" data-percent="3" data-fgcolor="#bababa" data-bgcolor="#eee" data-width="15" data-bordersize="15" data-animationstep="2"></div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-6">
-              <div class="text-center justify-content-center" style="height:100%;flex-direction:column;display:flex;">
-                <label class="demo-tags-wrapper" title="收藏">
-                  <input name="tags[]" type="checkbox"> 
-                  <div class="checkmark checkmark-blue checkmark-circle" style="">
-                    <i class="bi bi-bookmark-fill" style=""></i>
-                  </div>
-                </label>
+            <div class="col-xl-2 col-6 p-2">
+              <div class="card p-1 text-center justify-content-center" style="height:100%;border:none">
+                <div class="card-header">收藏</div>
+                <div class="card-body justify-content-center" style="flex-direction:column;display:flex;">
+                  <label class="demo-tags-wrapper" title="收藏">
+                    <input name="tags[]" type="checkbox"> 
+                    <div class="checkmark checkmark-blue checkmark-circle" style="">
+                      <i class="bi bi-bookmark-fill" style=""></i>
+                    </div>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
           <div class="row my-3"><h6>星期六</h6></div>
-          <div class="row mb-3">
-            <div class="col-lg-8">
-              <div class="card" style="border:none">
+          <div class="row my-3">
+            <div class="col-xl-8 col-12 p-2">
+              <div class="card p-1" style="border:none">
                 <div class="row g-0">
                   <div class="col-md-4" style="display:flex;align-items:center;justify-content:center;">
                     <a href="./video/video_id_0.html" title="2022美學2">
@@ -168,7 +182,9 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">2022美學2：知識類社群行銷經驗之分享</h5>
+                      <a href="./video/video_id_0.html" title="2022美學2" style="color: #333;text-decoration:none;">
+                        <h5 class="card-title">2022美學2：知識類社群行銷經驗之分享</h5>
+                      </a>
                       <p class="card-text">以「法律白話文運動」為例，解構知識類社群如何擴大受眾並引起關注。</p>
                       <p class="card-text"><small class="text-muted">影片更新於 2022/04/19</small></p>
                     </div>
@@ -176,59 +192,69 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-6 py-3">
-              <div class="card" style="height:100%;background-color:#E3E3E3;border:none">
-                <div class="card-body p-2" style="display:flex;align-items:center;justify-content:center;">
-                  <div class="text-center">完成狀態<br/>O</div>
+            <div class="col-xl-2 col-6 p-2" style="">
+              <div class="card p-1 text-center justify-content-center" style="height:100%;border:none">
+                <div class="card-header">完成度</div>
+                <div class="card-body text-center justify-content-center" style="flex-direction:column;display:flex;">
+                  <div id="progress2" data-dimension="80" data-text="88%" data-fontsize="16" data-percent="88" data-fgcolor="#7ec5f1" data-bgcolor="#daeefb" data-width="15" data-bordersize="15" data-animationstep="2" style="color:#1695e3;"></div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-6">
-              <div class="text-center justify-content-center" style="height:100%;flex-direction:column;display:flex;">
-                <label class="demo-tags-wrapper" title="收藏">
-                  <input name="tags[]" type="checkbox" checked> 
-                  <div class="checkmark checkmark-blue checkmark-circle" style="">
-                    <i class="bi bi-bookmark-fill" style=""></i>
-                  </div>
-                </label>
+            <div class="col-xl-2 col-6 p-2">
+              <div class="card p-1 text-center justify-content-center" style="height:100%;border:none">
+                <div class="card-header">收藏</div>
+                <div class="card-body justify-content-center" style="flex-direction:column;display:flex;">
+                  <label class="demo-tags-wrapper" title="收藏">
+                    <input name="tags[]" type="checkbox" checked> 
+                    <div class="checkmark checkmark-blue checkmark-circle" style="">
+                      <i class="bi bi-bookmark-fill" style=""></i>
+                    </div>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-lg-8">
-              <div class="card" style="border:none">
+          <div class="row my-3">
+            <div class="col-xl-8 col-12 p-2">
+              <div class="card p-1" style="border:none">
                 <div class="row g-0">
                   <div class="col-md-4" style="display:flex;align-items:center;justify-content:center;">
                     <a href="./video/video_id_0.html" title="2022美學3">
                       <img alt="2022美學3" src="https://metet.cwb.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" class="img-fluid rounded-start">
-                      <span class="video-time video-time_vertical">01:41:53</span>
+                      <span class="video-time video-time_vertical">02:00:45</span>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">2022美學3：社群媒體行銷趨勢及經驗分享/其他新興平台之觀點</h5>
-                      <p class="card-text">解構社群媒體運作模式及趨勢，包含Facebook、Youtube及LINE</p>
-                      <p class="card-text"><small class="text-muted">影片更新於 2022/04/28</small></p>
+                      <a href="./video/video_id_0.html" title="2022美學3" style="color: #333;text-decoration:none;">
+                        <h5 class="card-title">2022美學3：社群媒體行銷趨勢及經驗分享/其他新興平台之觀點</h5>
+                      </a>
+                      <p class="card-text">透過分析社群媒體後台數據，解讀網路使用者行為模式，找出增加觸及率、加強氣象資訊傳遞之行銷方式。</p>
+                      <p class="card-text"><small class="text-muted">影片更新於 2022/04/11</small></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-6 py-3">
-              <div class="card" style="height:100%;background-color:#E3E3E3;border:none">
-                <div class="card-body p-2" style="display:flex;align-items:center;justify-content:center;">
-                  <div class="text-center">完成狀態<br/>X</div>
+            <div class="col-xl-2 col-6 p-2" style="">
+              <div class="card p-1 text-center justify-content-center" style="height:100%;border:none">
+                <div class="card-header">完成度</div>
+                <div class="card-body text-center justify-content-center" style="flex-direction:column;display:flex;">
+                  <div id="progress3" data-dimension="80" data-text="63%" data-fontsize="16" data-percent="63" data-fgcolor="#bababa" data-bgcolor="#eee" data-width="15" data-bordersize="15" data-animationstep="2"></div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-6">
-              <div class="text-center justify-content-center" style="height:100%;flex-direction:column;display:flex;">
-                <label class="demo-tags-wrapper" title="收藏">
-                  <input name="tags[]" type="checkbox"> 
-                  <div class="checkmark checkmark-blue checkmark-circle" style="">
-                    <i class="bi bi-bookmark-fill" style=""></i>
-                  </div>
-                </label>
+            <div class="col-xl-2 col-6 p-2">
+              <div class="card p-1 text-center justify-content-center" style="height:100%;border:none">
+                <div class="card-header">收藏</div>
+                <div class="card-body justify-content-center" style="flex-direction:column;display:flex;">
+                  <label class="demo-tags-wrapper" title="收藏">
+                    <input name="tags[]" type="checkbox" checked> 
+                    <div class="checkmark checkmark-blue checkmark-circle" style="">
+                      <i class="bi bi-bookmark-fill" style=""></i>
+                    </div>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -249,7 +275,6 @@
           </nav>
         </div>
       </div>
-	</div>
   </div>
   <hr>
   <footer class="py-3 my-4">
@@ -259,5 +284,256 @@
 	</div>
   </footer>
 </div>
+
+<!-- circliful.js -->
+<!-- <script src="./circliful.js" crossorigin="anonymous"></script> -->
+
+<script>
+$(document).ready(function() {
+  $('#progress1').circliful();
+  $('#progress2').circliful();
+  $('#progress3').circliful();
+});
+
+
+//Note -- I removed the respondCanvas function from the circiful library
+/* PROGRESS CIRCLE COMPONENT */
+(function($) {
+
+  $.fn.circliful = function(options, callback) {
+
+    var settings = $.extend({
+      // These are the defaults.
+      startdegree: 0,
+      fgcolor: "#556b2f",
+      bgcolor: "#eee",
+      fill: false,
+      width: 15,
+      dimension: 200,
+      fontsize: 15,
+      percent: 50,
+      animationstep: 1.0,
+      iconsize: '20px',
+      iconcolor: '#999',
+      border: 'default',
+      complete: null,
+      bordersize: 10
+    }, options);
+
+    return this.each(function() {
+
+      var customSettings = ["fgcolor", "bgcolor", "fill", "width", "dimension", "fontsize", "animationstep", "endPercent", "icon", "iconcolor", "iconsize", "border", "startdegree", "bordersize"];
+
+      var customSettingsObj = {};
+      var icon = '';
+      var endPercent = 0;
+      var obj = $(this);
+      var fill = false;
+      var text, info;
+
+      obj.addClass('circliful');
+
+      checkDataAttributes(obj);
+
+      if (obj.data('text') != undefined) {
+        text = obj.data('text');
+
+        if (obj.data('icon') != undefined) {
+          icon = $('<i></i>')
+            .addClass('fa ' + $(this).data('icon'))
+            .css({
+            'color': customSettingsObj.iconcolor,
+            'font-size': customSettingsObj.iconsize
+          });
+        }
+
+        if (obj.data('type') != undefined) {
+          type = $(this).data('type');
+
+          if (type == 'half') {
+            addCircleText(obj, 'circle-text-half', (customSettingsObj.dimension / 1.45));
+          } else {
+            addCircleText(obj, 'circle-text', customSettingsObj.dimension);
+          }
+        } else {
+          addCircleText(obj, 'circle-text', customSettingsObj.dimension);
+        }
+      }
+
+      if ($(this).data("total") != undefined && $(this).data("part") != undefined) {
+        var total = $(this).data("total") / 100;
+
+        percent = (($(this).data("part") / total) / 100).toFixed(3);
+        endPercent = ($(this).data("part") / total).toFixed(3)
+      } else {
+        if ($(this).data("percent") != undefined) {
+          percent = $(this).data("percent") / 100;
+          endPercent = $(this).data("percent")
+        } else {
+          percent = settings.percent / 100
+        }
+      }
+
+      if ($(this).data('info') != undefined) {
+        info = $(this).data('info');
+
+        if ($(this).data('type') != undefined) {
+          type = $(this).data('type');
+
+          if (type == 'half') {
+            addInfoText(obj, 0.9);
+          } else {
+            addInfoText(obj, 1.25);
+          }
+        } else {
+          addInfoText(obj, 1.25);
+        }
+      }
+
+      $(this).width(customSettingsObj.dimension + 'px');
+
+      var canvas = $('<canvas></canvas>').attr({
+        width: customSettingsObj.dimension,
+        height: customSettingsObj.dimension
+      }).appendTo($(this)).get(0);
+
+      var context = canvas.getContext('2d');
+      var container = $(canvas).parent();
+      var x = canvas.width / 2;
+      var y = canvas.height / 2;
+      var degrees = customSettingsObj.percent * 360.0;
+      var radians = degrees * (Math.PI / 180);
+      var radius = canvas.width / 2.5;
+      var startAngle = 2.3 * Math.PI;
+      var endAngle = 0;
+      var counterClockwise = false;
+      var curPerc = customSettingsObj.animationstep === 0.0 ? endPercent : 0.0;
+      var curStep = Math.max(customSettingsObj.animationstep, 0.0);
+      var circ = Math.PI * 2;
+      var quart = Math.PI / 2;
+      var type = '';
+      var fireCallback = true;
+      var additionalAngelPI = (customSettingsObj.startdegree / 180) * Math.PI;
+
+      if ($(this).data('type') != undefined) {
+        type = $(this).data('type');
+
+        if (type == 'half') {
+          startAngle = 2.0 * Math.PI;
+          endAngle = 3.13;
+          circ = Math.PI;
+          quart = Math.PI / 0.996;
+        }
+      }
+
+      /**
+             * adds text to circle
+             *
+             * @param obj
+             * @param cssClass
+             * @param lineHeight
+             */
+      function addCircleText(obj, cssClass, lineHeight) {
+        $("<span></span>")
+          .appendTo(obj)
+          .addClass(cssClass)
+          .text(text)
+          .prepend(icon)
+          .css({
+          'line-height': lineHeight + 'px',
+          'font-size': customSettingsObj.fontsize + 'px'
+        });
+      }
+
+      /**
+             * adds info text to circle
+             *
+             * @param obj
+             * @param factor
+             */
+      function addInfoText(obj, factor) {
+        $('<span></span>')
+          .appendTo(obj)
+          .addClass('circle-info-half')
+          .css(
+          'line-height', (customSettingsObj.dimension * factor) + 'px'
+        )
+          .text(info);
+      }
+
+      /**
+             * checks which data attributes are defined
+             * @param obj
+             */
+      function checkDataAttributes(obj) {
+        $.each(customSettings, function(index, attribute) {
+          if (obj.data(attribute) != undefined) {
+            customSettingsObj[attribute] = obj.data(attribute);
+          } else {
+            customSettingsObj[attribute] = $(settings).attr(attribute);
+          }
+
+          if (attribute == 'fill' && obj.data('fill') != undefined) {
+            fill = true;
+          }
+        });
+      }
+
+      /**
+             * animate foreground circle
+             * @param current
+             */
+      function animate(current) {
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        context.beginPath();
+        context.arc(x, y, radius, endAngle, startAngle, false);
+
+        context.lineWidth = customSettingsObj.bordersize + 1;
+
+        context.strokeStyle = customSettingsObj.bgcolor;
+        context.stroke();
+
+        if (fill) {
+          context.fillStyle = customSettingsObj.fill;
+          context.fill();
+        }
+
+        context.beginPath();
+        context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
+
+        if (customSettingsObj.border == 'outline') {
+          context.lineWidth = customSettingsObj.width + 13;
+        } else if (customSettingsObj.border == 'inline') {
+          context.lineWidth = customSettingsObj.width - 13;
+        }
+
+        context.strokeStyle = customSettingsObj.fgcolor;
+        context.stroke();
+
+        if (curPerc < endPercent) {
+          curPerc += curStep;
+          requestAnimationFrame(function() {
+            animate(Math.min(curPerc, endPercent) / 100);
+          }, obj);
+        }
+
+        if (curPerc == endPercent && fireCallback && typeof(options) != "undefined") {
+          if ($.isFunction(options.complete)) {
+            options.complete();
+
+            fireCallback = false;
+          }
+        }
+      }
+
+      animate(curPerc / 100);
+
+    });
+  };
+}(jQuery));
+</script>
+
 </body>
 </html>
