@@ -60,6 +60,20 @@ ul, li {
   background-color:#fff;
 }
 
+
+/* #### 表格條紋行顏色設定 #### */
+.table-striped thead tr {
+  --bs-table-accent-bg:#FAFAFA;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+  --bs-table-accent-bg:#FAFAFA;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  --bs-table-accent-bg:#fff;
+}
+
 /* #### 分頁按鈕 #### */
 .page-item{
   margin-top: 0.5rem;
