@@ -46,6 +46,11 @@ ul, li {
 	display: flex;
 }
 
+/* 下拉式選單 menu 寬度 */
+.dropdown-menu {
+    min-width: 100%;
+}
+
 
 @media (max-width: 992px) { 
   #login-button {
@@ -245,25 +250,23 @@ ul, li {
 	height: 32px;
 	line-height: 27px;
 	width: auto;
-	background-color: transparent;
-	font-size: 14px!important;
+	font-size: 16px!important;
 	padding: 2px 12px;
-	border-radius: 28px;
+	border-radius: 4px;
 	font-weight: 400;
 	display: inline-block;
-}
-
-.checkmark-green {
-  border: 1px solid #aae679;
+	background-color:#FAFAFA;
+	color:#434343;
 }
 
 .demo-tags-wrapper input:checked~.checkmark-green {
-	background-color:#aae679;
+	background-color:#198754;
 	color:white
 }
 
-.checkmark-blue {
-  border: 1px solid #7ec5f1;
+.demo-tags-wrapper input:checked~.checkmark-blue {
+	background-color:#0d6efd;
+	color:white;
 }
 
 /* 圓形標記 */
@@ -275,10 +278,6 @@ ul, li {
   border-radius: 50%;
 }
 
-.demo-tags-wrapper input:checked~.checkmark-blue {
-	background-color:#7ec5f1;
-	color:white
-}
 
 /* input 隱藏 */
 .demo-tags-wrapper input {
