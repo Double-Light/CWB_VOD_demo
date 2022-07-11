@@ -23,7 +23,7 @@
 <header id="page-header-wrapper">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	<div class="container-fluid" style="max-width:1296px">
-	  <a class="navbar-brand" href="../index.html">氣象局隨選視訊平台</a>
+	  <a class="navbar-brand" href="./index.html">氣象局隨選視訊平台</a>
 	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	  </button>
@@ -36,8 +36,17 @@
 			<a class="nav-link active" aria-current="page" href="./user-info.html">個人資訊</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="./allvideos.html">所有影片</a>
+			<a class="nav-link" href="./dept.html">單位影片</a>
 		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./dept.html">單位影片</a>
+		  </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./allvideos.html">所有影片</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="./playlist.html">影片清單</a>
+          </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="./description.html">網站說明</a>
 		  </li>
@@ -81,7 +90,7 @@
           </div>
           <div class="info-num">
             <div class="viewcounts">
-              <p>完成影片數</p>
+              <p>完成課程數</p>
               <a href="./user-history.html" /*target="_blank"*/ title="共觀看完成42部影片" style="text-decoration:none;">42</a>
             </div>
             <div class="viewhours">
@@ -100,11 +109,11 @@
           <ul class="menu-list">
             <li class="">
               <i></i>
-              <a href="./user-history.html">觀看紀錄</a>
+              <a href="./user-history.html">修課列表</a>
             </li>
             <li>
               <i></i>
-              <a href="./user-favorite.html">我的收藏</a>
+              <a href="./user-favorite.html">收藏課程</a>
             </li>
             <li>
               <i></i>
@@ -116,12 +125,61 @@
       <div class="col-xl-9">
         <div class="box">
           <div class="">
-            <h2 class="">個人資訊</h2>
+            <span class="h2">個人資訊</span>
+			<button type="button" class="btn btn-outline-secondary" style="float:right;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"></path>
+</svg>
+              <b>編輯資料</b>
+		    </button>
           </div>
         </div>
 		
 		<div class="box">
-			
+         <table class="table table-borderless">
+			<tbody>
+              <tr>
+                <th>用戶全名</th>
+                <td>雲寶</td>
+              </tr>
+              <tr>
+                <th>電子信箱</th>
+                <td>cloudBaby@cwb.gov.tw</td>
+              </tr>
+              <tr>
+                <th>性別</th>
+                <td>女</td>
+              </tr>
+              <tr>
+                <th>年齡</th>
+                <td>18歲以下</td>
+              </tr>
+              <tr>
+                <th>教育程度</th>
+                <td>研究所</td>
+              </tr>
+              <tr>
+                <th>服務機關</th>
+                <td>交通部中央氣象局氣象預報中心</td>
+              </tr>
+              <tr>
+                <th>單位</th>
+                <td>傳真課</td>
+              </tr>
+              <tr>
+                <th>職位</th>
+                <td>課員</td>
+              </tr>
+              <tr>
+                <th>職稱</th>
+                <td>技佐</td>
+              </tr>
+              <tr>
+                <th>官職等</th>
+                <td>薦任第5職等</td>
+              </tr>
+			</tbody>
+		 </table>
         </div>
       </div>
 	</div>
