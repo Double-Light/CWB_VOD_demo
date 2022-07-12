@@ -8,6 +8,9 @@ body {
 
 .container{
 	padding-top: 12px;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	max-width: 100%;
 /*	max-width: 1200px; */
 } 
 
