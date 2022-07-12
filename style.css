@@ -14,6 +14,13 @@ body {
 /*	max-width: 1200px; */
 } 
 
+.container-fluid{
+	padding-left: 2rem;
+	padding-right: 2rem;
+	max-width: 100%;
+/*	max-width: 1200px; */
+} 
+
 h3{
   line-height: 40px;
 }
