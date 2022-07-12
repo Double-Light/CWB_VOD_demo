@@ -16,40 +16,8 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" src="https://mytube.ncku.edu.tw/js/bootstrap-treeview.js"></script> -->
 
-  <style>
-	/* checkmark 樣式 */
-	.checkmark {
-		height: 32px;
-		line-height: 27px;
-		width: auto;
-		background-color: transparent;
-		font-size: 14px!important;
-		padding: 2px 12px;
-		border-radius: 4px;
-		font-weight: 400;
-		display: inline-block;
-	}
-
-	.checkmark-green {
-	  border: 1px solid #aae679;
-	}
-
-	.demo-tags-wrapper input:checked~.checkmark-green {
-		background-color:#aae679;
-		color:white
-	}
-
-	.checkmark-blue {
-	  border: 1px solid #7ec5f1;
-	}
-	
-	.demo-tags-wrapper input:checked~.checkmark-blue {
-	  background-color:#7ec5f1;
-	  color:white
-	}
-  </style>
-  
 </head>
 
 <body>
@@ -63,13 +31,13 @@
       <div class="collapse navbar-collapse px-4" id="VOD-Navbar">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">首頁</a>
+            <a class="nav-link" aria-current="page" href="./index.html">首頁</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./user-info.html">個人資訊</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./allvideos.html">所有影片</a>
+            <a class="nav-link active" href="./allvideos.html">所有影片</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./description.html">網站說明</a>
@@ -100,353 +68,200 @@
 <div class="container">
   <div class="col-md-12">
     <div class="row py-3">
-      <div class="col-xl-12">
+      <div class="col-xl-3">
+        <div class="box" style="/*height:calc(100% - 85px);*/">
+		  <div class="fs-6 fw-bold">
+            <span class="fs-4">單位</span>
+			<button type="button" class="btn btn-secondary btn-sm" style="float:right;">清除</button>
+          </div>
+          <div id="treeview" style="overflow:scroll;overflow-x:hidden;overflow-y:auto;max-height:60vh" class="treeview my-3">
+            <ul class="list-group">
+              <li class="list-group-item node-treeview" data-nodeid="0" style="color:undefined;background-color:undefined">
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-8000000" style="color:inherit">局長室</a>
+                <span class="badge">5</span>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="1" style="color:undefined;background-color:undefined">
+                <span class="icon expand-icon bi-dash-lg"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10000000" style="color:inherit">秘書室</a>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="2" style="color:undefined;background-color:undefined">
+                <span class="indent"></span>
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10030000" style="color:inherit">公關室</a>
+                <span class="badge">2</span>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="3" style="color:undefined;background-color:undefined">
+                <span class="icon expand-icon bi-dash-lg"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10000000" style="color:inherit">預報中心</a>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="4" style="color:undefined;background-color:undefined">
+                <span class="indent"></span>
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10030000" style="color:inherit">視訊室演講</a>
+                <span class="badge">1042</span>
+              </li>
+              <li class="list-group-item node-treeview" data-nodeid="5" style="color:undefined;background-color:undefined">
+                <span class="indent"></span>
+                <span class="icon bi"></span>
+                <span class="icon node-icon"></span>
+                <a href="#node-10030000" style="color:inherit">美學教育訓練</a>
+                <span class="badge">42</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-9">
         <div class="box">
-          <div class="fs-4 fw-bold">篩選條件</div>
-          <form class="d-grid gap-2 d-md-block mx-auto">
-            <div class="btn-group" style="margin:4px">
-              <button type="button" class="btn btn-light dropdown-toggle border" id="dropdownMenuLink-sector" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#dropdown-sector" style="min-width:100px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
-                </svg>
-                單位
-              </button>
-              <ul id="dropdown-sector" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">局本部</a></li>
-                <li><a class="dropdown-item" href="#">預報中心</a></li>
-                <li><a class="dropdown-item" href="#">科技中心</a></li>
-                <li><a class="dropdown-item" href="#">地震中心</a></li>
-                <li><a class="dropdown-item" href="#">海象中心</a></li>
-                <li><a class="dropdown-item" href="#">南區中心</a></li>
-                <li><a class="dropdown-item" href="#">測站</a></li>
-              </ul>
-            </div>
-            <div class="btn-group" style="margin:4px">
-              <button type="button" class="btn btn-light dropdown-toggle border" id="dropdownMenuLink-category" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#dropdown-category" style="min-width:100px;">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap" viewBox="0 0 16 16">
-				  <path d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z"/>
-				</svg>
-                類別
-              </button>
-              <ul id="dropdown-category" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="">
-                <li><a class="dropdown-item" href="#">學術知識</a></li>
-                <li><a class="dropdown-item" href="#">專業訓練</a></li>
-                <li><a class="dropdown-item" href="#">行政訓練</a></li>
-                <li><a class="dropdown-item" href="#">局務會報</a></li>
-                <li><a class="dropdown-item" href="#">政令宣導</a></li>
-                <li><a class="dropdown-item" href="#">職能訓練</a></li>
-                <li><a class="dropdown-item" href="#">生活通識</a></li>
-                <li><a class="dropdown-item" href="#">未分類</a></li>
-              </ul>
-            </div>
-            <div class="btn-group" style="margin:4px">
-              <button type="button" class="btn btn-light border" data-bs-toggle="modal" data-bs-target="#TagsModal" style="min-width:100px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
-                  <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"></path>
-                  <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"></path>
-                </svg>
-                標籤
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-				  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-				  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-				</svg>
-              </button>
-            </div>
-			<div class="btn-group" style="margin:4px">
-              <button type="button" class="btn btn-light dropdown-toggle border" id="dropdownMenuLink-years" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#dropdown-years" style="min-width:100px;">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
-				  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
-				  <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
-				</svg>
-                年份
-              </button>
-              <ul id="dropdown-years" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="">
-                <li><a class="dropdown-item" href="#">2022</a></li>
-                <li><a class="dropdown-item" href="#">2021</a></li>
-                <li><a class="dropdown-item" href="#">2020</a></li>
-                <li><a class="dropdown-item" href="#">2019</a></li>
-                <li><a class="dropdown-item" href="#">2018</a></li>
-                <li><a class="dropdown-item" href="#">2017</a></li>
-                <li><a class="dropdown-item" href="#">2016</a></li>
-                <li><a class="dropdown-item" href="#">2011-2015</a></li>
-                <li><a class="dropdown-item" href="#">2000-2010</a></li>
-                <li><a class="dropdown-item" href="#">2000年以前</a></li>
-              </ul>
-            </div>
-			<div class="btn-group" style="margin:4px;min-width:16rem;">
-			  <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
-			  <button class="btn btn-light" type="submit" style="border-color:#ced4da;">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-				  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-				</svg>
-			  </button>
-			</div>
+          <div class="fs-6 fw-bold">
+            <span class="fs-4">篩選條件</span>
+            <label class="form-switch" style="float:right">
+              <input type="checkbox" class="form-check-input" role="switch" id="broad" style="cursor:pointer">
+            </label>
+            <span style="float:right;margin-right:8px;">廣泛篩選</span>
+          </div>
+          <form id="searchForm" name="searchForm" class="form-horizontal my-3" method="GET" rols="form" abineguid="F9C047C6F0A14AE88358EFD27FA6E10D">
+            <h5 style="font-weight:700">類別</h5>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="學術知識">
+              <span class="badge checkmark checkmark-green">學術知識</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="專業訓練">
+              <span class="badge checkmark checkmark-green">專業訓練</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="行政訓練">
+              <span class="badge checkmark checkmark-green">行政訓練</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="局務會報">
+              <span class="badge checkmark checkmark-green">局務會報</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="政令宣導">
+              <span class="badge checkmark checkmark-green">政令宣導</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="職能訓練">
+              <span class="badge checkmark checkmark-green">職能訓練</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="生活通識">
+              <span class="badge checkmark checkmark-green">生活通識</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="未分類">
+              <span class="badge checkmark checkmark-green">未分類</span>
+            </label>
+            <h5 style="font-weight:700">標籤</h5>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="氣象觀測">
+              <span class="badge checkmark checkmark-blue">氣象觀測</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="全部">
+              <span class="badge checkmark checkmark-blue">全部</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="氣象預報">
+              <span class="badge checkmark checkmark-blue">氣象預報</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="氣候">
+              <span class="badge checkmark checkmark-blue">氣候</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="海象">
+              <span class="badge checkmark checkmark-blue">海象</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="天文">
+              <span class="badge checkmark checkmark-blue">天文</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="地震">
+              <span class="badge checkmark checkmark-blue">地震</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="衛星">
+              <span class="badge checkmark checkmark-blue">衛星</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="雷達">
+              <span class="badge checkmark checkmark-blue">雷達</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="數值天氣預報">
+              <span class="badge checkmark checkmark-blue">數值天氣預報</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="春雨">
+              <span class="badge checkmark checkmark-blue">春雨</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="梅雨">
+              <span class="badge checkmark checkmark-blue">梅雨</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="颱風">
+              <span class="badge checkmark checkmark-blue">颱風</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="熱帶氣旋">
+              <span class="badge checkmark checkmark-blue">熱帶氣旋</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="西南氣流">
+              <span class="badge checkmark checkmark-blue">西南氣流</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="西南風">
+              <span class="badge checkmark checkmark-blue">西南風</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="鋒面">
+              <span class="badge checkmark checkmark-blue">鋒面</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="冰雹">
+              <span class="badge checkmark checkmark-blue">冰雹</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="颮線">
+              <span class="badge checkmark checkmark-blue">颮線</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="對流胞">
+              <span class="badge checkmark checkmark-blue">對流胞</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="中尺度對流">
+              <span class="badge checkmark checkmark-blue">中尺度對流</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="地震">
+              <span class="badge checkmark checkmark-blue">地震</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="海嘯">
+              <span class="badge checkmark checkmark-blue">海嘯</span>
+            </label>
+            <label class="demo-tags-wrapper">
+              <input name="items" type="checkbox" value="火山">
+              <span class="badge checkmark checkmark-blue">火山</span>
+            </label>
+            <a href="#" style="margin-left:1rem;">更多標籤...</a>
           </form>
-          <div class="modal in" id="TagsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-              <div class="modal-content" style="border-radius:3px;background-color:#f5f5f5;color:#000">
-                <div class="modal-header" style="border-bottom:1px solid #e8e8e8;position:relative;height:65px">
-                  <button type="button" class="btn-close btn-close-black" aria-label="Close" data-bs-dismiss="modal" style="border-radius:50%;"></button>
-                  <h4 class="modal-title" style="text-align:center;font-weight:700;margin:0;padding:0;margin-top:5px;font-size:18px;width:100%">影片標籤篩選</h4>
-                </div>
-                <div class="modal-body" style="overflow-y:scroll;padding-top:0">
-                  <div style="background-color:#e8e8e8;margin:0 -15px 20px -15px;padding:5px 15px 0 15px">
-                    <h5 style="font-weight:700">廣泛配對
-                      <label class="form-switch" style="float:right">
-                        <input type="checkbox" class="form-check-input" role="switch" id="broad" style="cursor:pointer">
-                      </label>
-                    </h5>
-                    <p style="color:gray;padding-bottom:12px;font-size:12px;padding-right:60px">較多結果，較不精準。配對所有包含任何一個選擇的標籤的影片，而非全部標籤。</p>
-                  </div>
-                  <h5 style="margin-bottom:15px;font-weight:700">專業領域：</h5>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="氣象觀測">
-                    <span class="checkmark checkmark-green">氣象觀測</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="氣象預報">
-                    <span class="checkmark checkmark-green">氣象預報</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="氣候">
-                    <span class="checkmark checkmark-green">氣候</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="海象">
-                    <span class="checkmark checkmark-green">海象</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="天文">
-                    <span class="checkmark checkmark-green">天文</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="地震">
-                    <span class="checkmark checkmark-green">地震</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="衛星">
-                    <span class="checkmark checkmark-green">衛星</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="雷達">
-                    <span class="checkmark checkmark-green">雷達</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="儀器檢校">
-                    <span class="checkmark checkmark-green">儀器檢校</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="數值天氣預報">
-                    <span class="checkmark checkmark-green">數值天氣預報</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="資訊系統">
-                    <span class="checkmark checkmark-green">資訊系統</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="災害防救">
-                    <span class="checkmark checkmark-green">災害防救</span>
-                  </label>
-                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">行政領域：</h5>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="行政業務">
-                    <span class="checkmark checkmark-green">行政業務</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="法規與法制">
-                    <span class="checkmark checkmark-green">法規與法制</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="文書與檔管">
-                    <span class="checkmark checkmark-green">文書與檔管</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="主計採購">
-                    <span class="checkmark checkmark-green">主計採購</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="人事管理">
-                    <span class="checkmark checkmark-green">人事管理</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="資訊安全">
-                    <span class="checkmark checkmark-green">資訊安全</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="永續發展">
-                    <span class="checkmark checkmark-green">永續發展</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="管理訓練">
-                    <span class="checkmark checkmark-green">管理訓練</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="工具使用">
-                    <span class="checkmark checkmark-green">工具使用</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="局務會報">
-                    <span class="checkmark checkmark-green">局務會報</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="業務報告">
-                    <span class="checkmark checkmark-green">業務報告</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="政令宣導">
-                    <span class="checkmark checkmark-green">政令宣導</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="廉政宣導">
-                    <span class="checkmark checkmark-green">廉政宣導</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="性別平等">
-                    <span class="checkmark checkmark-green">性別平等</span>
-                  </label>
-                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">通識領域：</h5>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="美學設計">
-                    <span class="checkmark checkmark-green">美學設計</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="社群媒體">
-                    <span class="checkmark checkmark-green">社群媒體</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="口語表達">
-                    <span class="checkmark checkmark-green">口語表達</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="電腦軟體">
-                    <span class="checkmark checkmark-green">電腦軟體</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="程式語言">
-                    <span class="checkmark checkmark-green">程式語言</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="科技新知">
-                    <span class="checkmark checkmark-green">科技新知</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="生活保健">
-                    <span class="checkmark checkmark-green">生活保健</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="影片欣賞">
-                    <span class="checkmark checkmark-green">影片欣賞</span>
-                  </label>
-                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">演講性質：</h5>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="新人訓練">
-                    <span class="checkmark checkmark-green">新人訓練</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="職務訓練">
-                    <span class="checkmark checkmark-green">職務訓練</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="作業SOP">
-                    <span class="checkmark checkmark-green">作業SOP</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="系統使用">
-                    <span class="checkmark checkmark-green">系統使用</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="系統管理">
-                    <span class="checkmark checkmark-green">系統管理</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="學術技術">
-                    <span class="checkmark checkmark-green">學術技術</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="校驗分析">
-                    <span class="checkmark checkmark-green">校驗分析</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="分析回顧">
-                    <span class="checkmark checkmark-green">分析回顧</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="經驗分享">
-                    <span class="checkmark checkmark-green">經驗分享</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="應用與服務">
-                    <span class="checkmark checkmark-green">應用與服務</span>
-                  </label>
-                  <h5 style="margin-top:15px;margin-bottom:15px;font-weight:700">熱門關鍵字：</h5>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="春雨">
-                    <span class="checkmark checkmark-blue">春雨</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="梅雨">
-                    <span class="checkmark checkmark-blue">梅雨</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="熱帶氣旋">
-                    <span class="checkmark checkmark-blue">熱帶氣旋</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="西南風">
-                    <span class="checkmark checkmark-blue">西南風</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="鋒面">
-                    <span class="checkmark checkmark-blue">鋒面</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="冰雹">
-                    <span class="checkmark checkmark-blue">冰雹</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="颮線">
-                    <span class="checkmark checkmark-blue">颮線</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="對流胞">
-                    <span class="checkmark checkmark-blue">對流胞</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="中尺度對流">
-                    <span class="checkmark checkmark-blue">中尺度對流</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="地震">
-                    <span class="checkmark checkmark-blue">地震</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="海嘯">
-                    <span class="checkmark checkmark-blue">海嘯</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="火山">
-                    <span class="checkmark checkmark-blue">火山</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="波浪">
-                    <span class="checkmark checkmark-blue">波浪</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="潮汐">
-                    <span class="checkmark checkmark-blue">潮汐</span>
-                  </label>
-                  <label class="demo-tags-wrapper">
-                    <input name="tags[]" type="checkbox" value="暴潮">
-                    <span class="checkmark checkmark-blue">暴潮</span>
-                  </label>
-                </div>
-                <hr style="border-color:#3a3c3f;margin:0">
-                <div class="modal-footer" style="border-top:none;width:100%;text-align:center;padding:0">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="display:inline-block;float:left;border:none;color:#fff;width:48%;font-weight:700;line-height:34px;cursor:pointer">取消</button>
-                  <button type="button" class="btn btn-primary" style="border:none;color:#fff;width:48%;font-weight:700;line-height:34px;cursor:pointer">確定</button>
-                </div>
-              </div>
-            </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button id ="clearAllTags" class="btn btn-secondary mx-md-2" type="button" onclick="clearAll()">清除選取</button>
+            <button id="TagsFilter" class="btn btn-primary mx-md-2" type="button" onclick="TagsFilter()">開始篩選</button>
           </div>
         </div>
         <div id="content_box" class="box" style="display:block">
@@ -665,5 +480,27 @@
     </div>
   </footer>
 </div>
+
+<script>
+// 清除所有條件
+function clearAll() {
+  $("input[name=items]").each(function() {
+    $(this).attr("checked", false);
+  });
+}
+
+//得到選中的值，ajax操作使用
+function TagsFilter() {
+  var text="";
+  $("input[name=items]").each(function() {
+    if ($(this).attr("checked")) {
+      text += "," + $(this).val();
+    }
+  });
+  console.log("text:" + text);
+  alert(text);
+};
+</script>
+
 </body>
 </html>

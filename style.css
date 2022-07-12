@@ -51,6 +51,11 @@ ul, li {
     min-width: 100%;
 }
 
+.remove-link-mark{
+	text-decoration: none;
+	color: inherit;
+}
+
 
 @media (max-width: 992px) { 
   #login-button {
