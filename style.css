@@ -8,7 +8,11 @@ body {
 
 .container{
 	padding-top: 12px;
-/*	max-width: 1200px; */
+	max-width: 1200px; 
+} 
+
+.container-fluid{
+	max-width: 1200px;
 } 
 
 h3{
