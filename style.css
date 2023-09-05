@@ -8,16 +8,6 @@ body {
 
 .container{
 	padding-top: 12px;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	max-width: 100%;
-/*	max-width: 1200px; */
-} 
-
-.container-fluid{
-	padding-left: 2rem;
-	padding-right: 2rem;
-	max-width: 100%;
 /*	max-width: 1200px; */
 } 
 
@@ -56,14 +46,16 @@ ul, li {
 	display: flex;
 }
 
+/* 色調 */
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: #2B6DA3!important;
+}
+
 /* 下拉式選單 menu 寬度 */
 .dropdown-menu {
     min-width: 100%;
-}
-
-.remove-link-mark{
-	text-decoration: none;
-	color: inherit;
 }
 
 
